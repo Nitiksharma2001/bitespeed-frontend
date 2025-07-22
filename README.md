@@ -1,6 +1,15 @@
-# React + Vite
+# Bitespeed Frontend
 
-This is a React project bootstrapped with [Vite](https://vitejs.dev/).
+This is a App is bootstrapped with [Vite](https://vitejs.dev/).
+
+# Demo Image
+
+## Add Node
+<img width="1808" height="888" alt="image" src="https://github.com/user-attachments/assets/b816f3f9-2aed-46fc-97b5-0718e0e71a67" />
+
+## Update Node
+<img width="1851" height="897" alt="image" src="https://github.com/user-attachments/assets/8ff94baf-b5b4-4ec8-a33e-e3edfbc0cafe" />
+
 
 ## Getting Started
 
@@ -31,29 +40,6 @@ npm run dev
 yarn dev
 ```
 The app will be available at [http://localhost:5173](http://localhost:5173).
-
-### Building for Production
-To create an optimized production build, run:
-```sh
-npm run build
-# or
-yarn build
-```
-The built files will be in the `dist/` directory.
-
-## Project Structure
-```
-├── src
-│   ├── components  # Reusable components
-│   ├── pages       # Page components
-│   ├── assets      # Static assets (images, fonts, etc.)
-│   ├── App.jsx     # Main application component
-│   ├── main.jsx    # Entry point
-├── public          # Static public assets
-├── package.json    # Project metadata and dependencies
-├── vite.config.js  # Vite configuration
-└── README.md       # Project documentation
-```
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
