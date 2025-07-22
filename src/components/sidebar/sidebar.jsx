@@ -1,5 +1,6 @@
-import { useRef } from 'react'
 import { useDnD } from '../../contexts/dnd-context'
+import { FaRegMessage } from 'react-icons/fa6'
+import UpdateBox from './updateBox'
 
 export default ({ selectedNodeDetails, updateNodeData, onClickNode }) => {
   const [_, setType] = useDnD()
@@ -10,46 +11,26 @@ export default ({ selectedNodeDetails, updateNodeData, onClickNode }) => {
   }
 
   return (
-    <aside className='border-l-black border-2'>
+    <aside className='border-l-gray-500 border-[1px] w-1/4'>
       {selectedNodeDetails.isSelected ? (
-        <UpdateChatBoxDetails
+        // for updating node data
+        <UpdateBox
           nodeDetails={selectedNodeDetails.nodeDetails}
           updateNodeData={updateNodeData}
           onClickNode={onClickNode}
         />
       ) : (
         <>
-          <div className='description'>You can drag these nodes to the pane on the right.</div>
+          {/* for droppng a new node on map */}
           <div
-            className='dndnode input'
+            className='flex flex-col ml-4 mt-8 w-1/2 h-20 cursor-grab justify-center items-center gap-2 border-2 border-blue-500 rounded-xl p-2 text-blue-600'
             onDragStart={(event) => onDragStart(event, 'custom')}
             draggable>
-            Input Node
+            <FaRegMessage />
+            Message
           </div>
         </>
       )}
     </aside>
-  )
-}
-
-function UpdateChatBoxDetails({ nodeDetails, updateNodeData, onClickNode }) {
-  const { id, data } = nodeDetails
-  const newDataRef = useRef(data)
-
-  return (
-    <div className='flex flex-col'>
-      <input
-        type='text'
-        defaultValue={newDataRef.current.title}
-        onChange={(e) => (newDataRef.current.title = e.target.value)}
-      />
-      <button
-        onClick={() => {
-          updateNodeData(id, newDataRef.current)
-          onClickNode(id, false)
-        }}>
-        save
-      </button>
-    </div>
   )
 }
